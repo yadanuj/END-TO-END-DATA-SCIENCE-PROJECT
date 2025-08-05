@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analyzer</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 50px; background-color: #f5f5f5; }
+        textarea { width: 400px; height: 150px; padding: 10px; }
+        .result { margin-top: 20px; font-size: 1.2em; color: #444; }
+    </style>
+</head>
+<body>
+    <h1>IMDb Review Sentiment Analyzer 🎬</h1>
+    <form method="POST" action="/predict">
+        <textarea name="review" placeholder="Paste a movie review here..." required></textarea><br><br>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+    {% if prediction %}
+        <div class="result">
+            <strong>Review:</strong> {{ review }}<br><br>
+            <strong>Sentiment:</strong> {{ prediction }}
+        </div>
+    {% endif %}
+</body>
+</html>
